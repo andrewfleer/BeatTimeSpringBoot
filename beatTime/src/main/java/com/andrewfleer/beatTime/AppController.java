@@ -32,7 +32,7 @@ public class AppController {
 		int minutes = now.get(Calendar.MINUTE) * 60;
 		int hours = now.get(Calendar.HOUR) * 60 * 60;
 		
-		BigDecimal beatSeconds = new BigDecimal((seconds + minutes + hours) / BEAT_TIME_DIVISOR).setScale(2, RoundingMode.HALF_UP);
+		BigDecimal beatSeconds = new BigDecimal((seconds + minutes + hours) / BEAT_TIME_DIVISOR).setScale(0, RoundingMode.DOWN);
 		
 		return beatSeconds.toString();
 	}
